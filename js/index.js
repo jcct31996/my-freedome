@@ -1,4 +1,4 @@
-/*
+
 "use strict";
 (function () {
   console.log('Your JS is loaded!');
@@ -17,11 +17,11 @@
     }
   });
 })();
-*/
 
+/*
 window.PPAemConnector = (function () {
 
-  var myBtn = function (domChanges) {
+  var myBtn = function () {
     var myBtn = document.querySelectorAll(".myBtn");
     console.log("myBtn: " + myBtn);
     var i;
@@ -31,10 +31,12 @@ window.PPAemConnector = (function () {
         alert("clicked");
       });
     }
-  }
+  };
 
   return {
     myBtn: myBtn
   }
 
 }());
+
+*/
