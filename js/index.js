@@ -1,3 +1,4 @@
+/*
 "use strict";
 (function () {
   console.log('Your JS is loaded!');
@@ -16,3 +17,24 @@
     }
   });
 })();
+*/
+
+window.PPAemConnector = (function () {
+
+  var myBtn = function (domChanges) {
+    var myBtn = document.querySelectorAll(".myBtn");
+    console.log("myBtn: " + myBtn);
+    var i;
+    for (i = 0; i < myBtn.length; i++) {
+      console.log("myBtn[i]: " + myBtn[i]);
+      myBtn[i].addEventListener("click", function () {
+        alert("clicked");
+      });
+    }
+  }
+
+  return {
+    myBtn: myBtn
+  }
+
+}());
