@@ -249,6 +249,7 @@ if (!Element.prototype.closest) {
 }());
 (function () {
   document.addEventListener("DOMContentLoaded", function () {
+    console.log('fake JS dom ready');
     var h = document.getElementsByClassName("cmp-tabs__tab--collapsible");
     if (h) {
       for (var c = 0; c < h.length; c++) {
