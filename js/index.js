@@ -2,6 +2,7 @@
 "use strict";
 (function () {
   console.log('Your JS is loaded!');
+  console.log("document: "+document);
   document.addEventListener("DOMContentLoaded", function () {
     console.log('Your document is ready!');
     var myBtn = document.querySelectorAll(".myBtn");
