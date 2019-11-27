@@ -74,6 +74,7 @@ if (!Element.prototype.closest) {
       m._elements = {};
       m._elements.self = y;
       var s = m._elements.self.querySelectorAll("[data-" + f + "-hook-" + g + "]");
+      console.log("s: "+s);
       for (var v = 0; v < s.length; v++) {
         var w = s[v];
         if (w.closest("." + f + "-" + g) === m._elements.self) {
