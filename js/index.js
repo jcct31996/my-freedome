@@ -1,43 +1,45 @@
-
-"use strict";
 (function () {
-  console.log('Your JS is loaded!');
-  console.log("document: "+document);
   document.addEventListener("DOMContentLoaded", function () {
-    console.log('Your document is ready!');
-    var myBtn = document.querySelectorAll(".myBtn");
-    console.log("myBtn: " + myBtn);
-    console.log("myBtn[0]: " + myBtn[0]);
-    console.log("myBtn[1]: " + myBtn[1]);
-    var i;
-    for (i = 0; i < myBtn.length; i++) {
-      console.log("myBtn[i]: " + myBtn[i]);
-      myBtn[i].addEventListener("click", function () {
-        alert("clicked");
-      });
+    var b = document.querySelectorAll(".cmp-card__item");
+    var c = 0;
+    if (b.length < 1) {
+      return
     }
-  });
+    b.forEach(function (g) {
+      var j = g.querySelector(".cmp-card__item-front");
+      var h = g.querySelector(".cmp-card__item-back");
+      var d = g.offsetHeight || 0;
+      var f = j ? j.offsetHeight : 0;
+      var i = h ? h.offsetHeight : 0;
+      var e = Math.max(d, f, i);
+      if (e > c) {
+        c = e
+      }
+      if (g.dataset.cardDisableFlip == "true") {
+        return
+      }
+      g.addEventListener("click", function (k) {
+        if (!k.target.hasAttribute("href")) {
+          k.preventDefault();
+          j.classList.toggle("cmp-card__item--flip-front");
+          h.classList.toggle("cmp-card__item--flip-back")
+        }
+      })
+    });
+
+    function a() {
+      b.forEach(function (d) {
+        var f = d.querySelector(".cmp-card__item-front");
+        var e = d.querySelector(".cmp-card__item-back");
+        d.style.height = c + "px";
+        if (f) {
+          f.style.height = c + "px"
+        }
+        if (e) {
+          e.style.height = c + "px"
+        }
+      })
+    }
+    a()
+  })
 })();
-
-/*
-window.PPAemConnector = (function () {
-
-  var myBtn = function () {
-    var myBtn = document.querySelectorAll(".myBtn");
-    console.log("myBtn: " + myBtn);
-    var i;
-    for (i = 0; i < myBtn.length; i++) {
-      console.log("myBtn[i]: " + myBtn[i]);
-      myBtn[i].addEventListener("click", function () {
-        alert("clicked");
-      });
-    }
-  };
-
-  return {
-    myBtn: myBtn
-  }
-
-}());
-
-*/
