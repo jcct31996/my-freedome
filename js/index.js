@@ -3,7 +3,10 @@
   console.log('Your JS is loaded!');
 
   console.log('Your document is ready!');
-  var myBtn = document.querySelectorAll(".myBtn");
+  var myBtn = document.querySelector(".myBtn");
+  myBtn.addEventListener("click", function () {
+    console.log("Clicked querySelector");
+  });
   console.log("myBtn: " + myBtn);
   console.log("myBtn[0]: " + myBtn[0]);
   console.log("myBtn[1]: " + myBtn[1]);
