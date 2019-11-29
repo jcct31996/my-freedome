@@ -1,5 +1,6 @@
 (function () {
   console.log("$A" + $A);
+  console.log("document" + document);
   document.addEventListener("DOMContentLoaded", function () {
     var b = document.querySelectorAll(".cmp-card__item");
     var c = 0;
