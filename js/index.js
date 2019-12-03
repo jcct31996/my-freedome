@@ -1,6 +1,18 @@
-(function () {
+var myButton = function () {
   console.log("$A" + $A);
   console.log("document" + document);
+  var myBtn = document.querySelectorAll('.myBtn');
+  var i;
+  if (myBtn.length) {
+    for (i=0; i<myBtn.length; i++){
+      myBtn[i].on("click", function() {
+        console.log("clicked");
+      })
+    }
+  }
+}();
+
+(function () {
   document.addEventListener("DOMContentLoaded", function () {
     var b = document.querySelectorAll(".cmp-card__item");
     var c = 0;
