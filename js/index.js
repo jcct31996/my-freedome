@@ -1,7 +1,7 @@
 var myButton = function () {
   console.log("$A" + $A);
   console.log("document" + document);
-  var myBtn = this.querySelectorAll('.myBtn');
+  var myBtn = document.querySelector('#fbbf8631-c663-43de-b9a0-27a7c5e31bf7').shadowRoot.querySelectorAll('.myBtn');
   var i;
   if (myBtn.length) {
     for (i=0; i<myBtn.length; i++){
