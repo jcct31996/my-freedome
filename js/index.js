@@ -5,7 +5,7 @@ var myButton = function () {
   var i;
   if (myBtn.length) {
     for (i=0; i<myBtn.length; i++){
-      myBtn[i].on("click", function() {
+      myBtn[i].addEventListener("click", function() {
         console.log("clicked");
       })
     }
